@@ -2,8 +2,12 @@ $c-light: #ffffff;
 $c-dark: #5f458c;
 $c-purple: #a67ee5;
 
-$font: "Proxima Nova", "Arial", sans-serif;
-$font-alt: "Radical",  "Arial", sans-serif;
+$font: "Proxima Nova",
+"Arial",
+sans-serif;
+$font-alt: "Radical",
+"Arial",
+sans-serif;
 
 $stop-scaling: 2000px;
 
@@ -19,3 +23,6 @@ $retina-dpi: 144dpi;
 $retina-dppx: 1.5dppx;
 
 $index: 1.38871;
+
+$delay: 0.2s;
+$short-dur: 0.5s;

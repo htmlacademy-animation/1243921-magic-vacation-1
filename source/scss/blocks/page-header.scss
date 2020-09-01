@@ -111,6 +111,7 @@
   }
 
   .page-header--menu-opened & {
+
     &::before,
     &::after {
       top: 50%;
@@ -254,7 +255,10 @@
       left: 0;
       transform-origin: left;
       transform: scaleX(0);
-      transition: all 0.2s ease;
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        transform-origin 0.0001s ease 0.2s;
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
@@ -273,7 +277,7 @@
       &::after {
         display: block;
         transform: scaleX(1);
-        transform-origin: right;
+        transform-origin: left;
       }
     }
 

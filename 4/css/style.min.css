@@ -2613,7 +2613,7 @@ img {
   bottom: 6rem;
   right: 5.6rem;
   transform-origin: right;
-  animation: right-to-left-appearing 0.5s 0.9s both; }
+  animation: right-to-left-appearing 0.5s both paused; }
   @media (min-width: 2000px) {
     .rules__link {
       bottom: 60px;
@@ -2630,6 +2630,9 @@ img {
     .rules__link {
       bottom: 2rem;
       right: 1.5rem; } }
+
+.rules__link-active {
+  animation-play-state: running; }
 
 .screen {
   position: relative;
@@ -3420,7 +3423,7 @@ img {
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translate3d(100px, 0, 0); }
+    transform: translate3d(5rem, 0, 0); }
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0); } }

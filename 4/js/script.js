@@ -10483,6 +10483,29 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./source/js/modules/rules.js":
+/*!************************************!*\
+  !*** ./source/js/modules/rules.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (() => {
+
+  const goNextBtn = document.querySelector('.rules__link');
+  const items = document.querySelectorAll('.rules__item p');
+  const itemsAmount = items.length;
+
+  items[itemsAmount - 1].addEventListener('animationend', () => {
+    goNextBtn.classList.add('rules__link-active');
+  });
+});
+
+
+/***/ }),
+
 /***/ "./source/js/modules/slider.js":
 /*!*************************************!*\
   !*** ./source/js/modules/slider.js ***!
@@ -10619,7 +10642,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_form_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/form.js */ "./source/js/modules/form.js");
 /* harmony import */ var _modules_social_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/social.js */ "./source/js/modules/social.js");
 /* harmony import */ var _modules_full_page_scroll__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/full-page-scroll */ "./source/js/modules/full-page-scroll.js");
+/* harmony import */ var _modules_rules_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/rules.js */ "./source/js/modules/rules.js");
 // modules
+
 
 
 
@@ -10639,6 +10664,7 @@ Object(_modules_chat_js__WEBPACK_IMPORTED_MODULE_4__["default"])();
 Object(_modules_result_js__WEBPACK_IMPORTED_MODULE_5__["default"])();
 Object(_modules_form_js__WEBPACK_IMPORTED_MODULE_6__["default"])();
 Object(_modules_social_js__WEBPACK_IMPORTED_MODULE_7__["default"])();
+Object(_modules_rules_js__WEBPACK_IMPORTED_MODULE_9__["default"])();
 
 const fullPageScroll = new _modules_full_page_scroll__WEBPACK_IMPORTED_MODULE_8__["default"]();
 fullPageScroll.init();

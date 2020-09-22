@@ -7,3 +7,37 @@
     width: calc(100% - 21rem);
   }
 }
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translate3d(5rem, 0, 0)
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0)
+  }
+}
+
+@keyframes scale-appearing {
+  from {
+    transform: scale(0)
+  }
+
+  to {
+    transform: scale(1)
+  }
+}
+
+@keyframes right-to-left-appearing {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}

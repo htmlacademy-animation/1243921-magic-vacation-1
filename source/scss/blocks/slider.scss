@@ -136,6 +136,7 @@
   justify-content: space-between;
   width: 17rem;
   z-index: 1;
+  animation: alpha-in 0.6s ease-in;
 
   @media (min-width: $stop-scaling) {
     bottom: 28px;
@@ -157,6 +158,25 @@
   width: 4rem;
   height: 4rem;
   color: $c-dark;
+
+  .active & {
+    animation-duration: .5s;
+    animation-delay: .1s;
+    animation-timing-function: $bezier-2;
+
+    &--prev {
+      animation-name: rotate-to-right;
+    }
+
+    &--next {
+      animation-name: rotate-to-left;
+    }
+
+    svg {
+      opacity: 1;
+      transition: opacity .2s linear .3s;
+    }
+  }
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -180,6 +200,7 @@
     width: 1rem;
     height: 2rem;
     pointer-events: none;
+    opacity: 0;
 
     @media (min-width: $stop-scaling) {
       width: 10px;

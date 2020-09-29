@@ -114,8 +114,7 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.27;
-  animation: alphaIn 0.6s ease-in, slideUp 0.5s linear;
-  -webkit-animation: alphaIn 0.6s ease-in, slideUp 0.5s linear;
+  animation: alpha-in 0.6s ease-in, slide-up 0.5s linear;  
 
 
   @media (min-width: $stop-scaling) {
@@ -184,45 +183,5 @@
   @media (min-width: $stop-scaling) {
     margin: 0 0 0 -5px;
     font-size: 48px;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(30px);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
-
-@keyframes alphaIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes slideUp {
-  from {
-    transform: translateY(5rem);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
-
-@-webkit-keyframes alphaIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
   }
 }

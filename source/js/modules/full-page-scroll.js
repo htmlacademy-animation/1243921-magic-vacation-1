@@ -9,6 +9,7 @@ export default class FullPageScroll {
     this.screenElements = document.querySelectorAll(`.screen:not(.screen--result)`);
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
     this.screen_background = document.querySelector(`.screen__background`);
+    this.svgFirstAward = document.getElementById('svgFirstAward');
     this.activeScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
     this.onUrlHashChengedHandler = this.onUrlHashChanged.bind(this);
@@ -53,7 +54,7 @@ export default class FullPageScroll {
       this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
       this.screenElements[this.activeScreen].classList.add(`active`);
     };
-    
+
     if (this.screenElements[this.activeScreen].classList.contains(`screen--prizes`) &&
       this.lastActiveScreen === ID_STORY) {
       this.screen_background.classList.add('active');
@@ -63,6 +64,10 @@ export default class FullPageScroll {
     } else {
       this.screen_background.classList.remove('active');
       addActiveScreen();
+    }
+
+    if (this.screenElements[this.activeScreen].classList.contains(`screen--prizes`)) {
+      this.svgFirstAward.src = "img/primary-award-from.svg";
     }
   }
 

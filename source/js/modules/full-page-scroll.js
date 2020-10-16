@@ -10,6 +10,7 @@ export default class FullPageScroll {
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
     this.screen_background = document.querySelector(`.screen__background`);
     this.svgFirstAward = document.getElementById('svgFirstAward');
+    this.svgSecondAward = document.getElementById('svgSecondAward');
     this.activeScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
     this.onUrlHashChengedHandler = this.onUrlHashChanged.bind(this);
@@ -68,6 +69,7 @@ export default class FullPageScroll {
 
     if (this.screenElements[this.activeScreen].classList.contains(`screen--prizes`)) {
       this.svgFirstAward.src = "img/primary-award-from.svg";
+      this.svgSecondAward.src = "img/secondary-award-from.svg";
     }
   }
 

@@ -21,7 +21,7 @@ module.exports = {
   devtool: `source-map`,
   devServer: {
     contentBase: path.join(__dirname, 'build'),
-    port: 7777
+    host: '192.168.1.123'
   },
   output: {
     path: path.join(__dirname, 'build'),

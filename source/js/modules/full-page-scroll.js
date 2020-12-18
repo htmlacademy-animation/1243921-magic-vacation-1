@@ -1,6 +1,7 @@
 import throttle from 'lodash/throttle';
 
 const ID_STORY = 1;
+const ID_INTRO = 0;
 
 export default class FullPageScroll {
   constructor() {
@@ -8,9 +9,9 @@ export default class FullPageScroll {
 
     this.screenElements = document.querySelectorAll(`.screen:not(.screen--result)`);
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
-    this.screen_background = document.querySelector(`.screen__background`);
-    this.svgFirstAward = document.getElementById('svgFirstAward');
-    this.svgSecondAward = document.getElementById('svgSecondAward');
+    this.screenBackground = document.querySelector(`.screen__background`);
+    this.svgFirstAward = document.getElementById(`svgFirstAward`);
+    this.svgSecondAward = document.getElementById(`svgSecondAward`);
     this.activeScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
     this.onUrlHashChengedHandler = this.onUrlHashChanged.bind(this);
@@ -57,19 +58,20 @@ export default class FullPageScroll {
     };
 
     if (this.screenElements[this.activeScreen].classList.contains(`screen--prizes`) &&
-      this.lastActiveScreen === ID_STORY) {
-      this.screen_background.classList.add('active');
+      (this.lastActiveScreen === ID_STORY || this.lastActiveScreen === ID_INTRO)
+    ) {
+      this.screenBackground.classList.add(`active`);
       setTimeout(() => {
-        addActiveScreen()
-      }, 500);
+        addActiveScreen();
+      }, 200);
     } else {
-      this.screen_background.classList.remove('active');
+      this.screenBackground.classList.remove(`active`);
       addActiveScreen();
     }
 
     if (this.screenElements[this.activeScreen].classList.contains(`screen--prizes`)) {
-      this.svgFirstAward.src = "img/primary-award-from.svg";
-      this.svgSecondAward.src = "img/secondary-award-from.svg";
+      this.svgFirstAward.src = `img/primary-award-from.svg`;
+      this.svgSecondAward.src = `img/secondary-award-from.svg`;
     }
   }
 
@@ -84,9 +86,9 @@ export default class FullPageScroll {
   emitChangeDisplayEvent() {
     const event = new CustomEvent(`screenChanged`, {
       detail: {
-        'screenId': this.activeScreen,
-        'screenName': this.screenElements[this.activeScreen].id,
-        'screenElement': this.screenElements[this.activeScreen]
+        screenId: this.activeScreen,
+        screenName: this.screenElements[this.activeScreen].id,
+        screenElement: this.screenElements[this.activeScreen]
       }
     });
 

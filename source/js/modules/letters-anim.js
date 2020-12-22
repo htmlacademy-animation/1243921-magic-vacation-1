@@ -2,10 +2,10 @@ export default () => {
 
   class AccentTypographyBuild {
     constructor(
-      elementSelector,
-      timer,
-      classForActivate,
-      property
+        elementSelector,
+        timer,
+        classForActivate,
+        property
     ) {
       this._TIME_SPACE = 100;
 
@@ -24,7 +24,7 @@ export default () => {
       span.textContent = letter;
       span.style.transition = `${this._property} ${this._timer}ms ease ${this._timeOffset}ms`;
 
-      if ((index % 2) == 0) {
+      if ((index % 2) === 0) {
         this._timeOffset += 60;
       } else {
         this._timeOffset -= 20;
@@ -37,7 +37,7 @@ export default () => {
       if (!this._element) {
         return;
       }
-      const text = this._element.textContent.trim().split(` `).filter((latter) => latter !== '');
+      const text = this._element.textContent.trim().split(` `).filter((latter) => latter !== ``);
 
       const content = text.reduce((fragmentParent, word) => {
         const wordElement = Array.from(word).reduce((fragment, latter, index) => {
@@ -75,4 +75,4 @@ export default () => {
   setTimeout(() => {
     animationDateTextLine.runAnimation();
   }, 500);
-}
+};

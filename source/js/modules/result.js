@@ -14,6 +14,12 @@ export default () => {
         });
         targetEl[0].classList.add(`screen--show`);
         targetEl[0].classList.remove(`screen--hidden`);
+
+
+        const resultPaths = document.querySelectorAll(`.screen--show .result path`);
+        resultPaths.forEach((path) => {
+          path.dispatchEvent(new Event(`strokeAnimationStart`));
+        });
       });
     }
 
@@ -29,4 +35,28 @@ export default () => {
       });
     }
   }
+
+  const pathArr = document.querySelectorAll(`.result__title path`);
+  let delay = 0
+  pathArr.forEach((path) => {
+    const pathLength = path.getTotalLength();
+    const animation = document.createElementNS(`http://www.w3.org/2000/svg`, `animate`);
+
+    path.setAttribute(`stroke-dasharray`, `0 ` + pathLength / 2);
+    animation.setAttribute(`dur`, `0.5s`);
+    animation.setAttribute(`attributeName`, `stroke-dasharray`);
+    animation.setAttribute(`from`, `0 ` + pathLength / 2);
+    animation.setAttribute(`to`, pathLength / 2 + ` 0`);
+    animation.setAttribute(`keySplines`, `0.2, 0, 0.8, 1`);
+    animation.setAttribute(`fill`, `freeze`);
+    animation.setAttribute(`begin`, `strokeAnimationStart`);
+
+    if (path.parentElement.parentElement.classList.contains(`fail`)) {
+      animation.setAttribute(`begin`, `strokeAnimationStart  + ${delay}s`);
+      delay += 0.08
+    }
+
+
+    path.appendChild(animation);
+  });
 };

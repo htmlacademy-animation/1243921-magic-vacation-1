@@ -81,3 +81,24 @@
     opacity: 1;
   }
 }
+
+@keyframes down-scale {
+  from {
+    transform: scale(1.2)
+  }
+
+  to {
+    transform: scale(1)
+  }
+}
+
+@keyframes fail-falling {
+  from {
+    transform: translate3d(0, -4em, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, -1.5, 0);
+    opacity: 1;
+  }
+}

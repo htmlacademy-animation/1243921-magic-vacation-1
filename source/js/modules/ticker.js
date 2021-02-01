@@ -24,7 +24,7 @@ export default class Ticker {
 
     this.printTime(timeSec, timeMin);
 
-    if ((timeMin == 0 && timeSec == 0) || timeMin < 0 || timeSec < 0) {
+    if ((timeMin === 0 && timeSec === 0) || timeMin < 0 || timeSec < 0) {
       this.reset();
     }
   }

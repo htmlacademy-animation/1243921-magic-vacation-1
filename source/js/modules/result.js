@@ -56,7 +56,6 @@ export default () => {
       delay += 0.08;
     }
 
-
     path.appendChild(animation);
   });
 };

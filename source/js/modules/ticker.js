@@ -5,6 +5,9 @@ export default class Ticker {
     this.timeStart = 0;
     this.duration = dur * 60 * 1000;
     this.tickerId = null;
+    this.fps = 1000 / 10;
+    this.then = Date.now();
+    this.elapsed
   }
 
   start() {
@@ -22,7 +25,12 @@ export default class Ticker {
     const timeSec = Math.floor((time / 1000) % 60);
     const timeMin = Math.floor((time / 1000 / 60) % 60);
 
-    this.printTime(timeSec, timeMin);
+    const now = Date.now();
+    this.elapsed = now - this.then;
+    if (this.elapsed > this.fps) {
+      this.then = now - (this.elapsed % this.fps);
+      this.printTime(timeSec, timeMin);
+    }
 
     if ((timeMin === 0 && timeSec === 0) || timeMin < 0 || timeSec < 0) {
       this.reset();

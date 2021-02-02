@@ -7,7 +7,7 @@ export default class Ticker {
     this.tickerId = null;
     this.fps = 1000 / 10;
     this.then = Date.now();
-    this.elapsed
+    this.elapsed = 0;
   }
 
   start() {

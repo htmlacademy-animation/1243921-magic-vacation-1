@@ -1,4 +1,8 @@
 import throttle from 'lodash/throttle';
+import {
+  startTicker,
+  resetTicker
+} from "./game-ticker";
 
 const ID_STORY = 1;
 const ID_INTRO = 0;
@@ -74,6 +78,12 @@ export default class FullPageScroll {
       this.svgFirstAward.src = `img/primary-award-from.svg`;
       this.svgSecondAward.src = `img/secondary-award-from.svg`;
       this.svgThirdAward.src = `img/additional-award-from.svg`;
+    }
+
+    if (this.screenElements[this.activeScreen].classList.contains(`screen--game`)) {
+      startTicker();
+    } else {
+      resetTicker();
     }
   }
 

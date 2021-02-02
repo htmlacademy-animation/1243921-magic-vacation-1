@@ -37,7 +37,7 @@ export default () => {
   }
 
   const pathArr = document.querySelectorAll(`.result__title path`);
-  let delay = 0
+  let delay = 0;
   pathArr.forEach((path) => {
     const pathLength = path.getTotalLength();
     const animation = document.createElementNS(`http://www.w3.org/2000/svg`, `animate`);
@@ -53,9 +53,8 @@ export default () => {
 
     if (path.parentElement.parentElement.classList.contains(`fail`)) {
       animation.setAttribute(`begin`, `strokeAnimationStart  + ${delay}s`);
-      delay += 0.08
+      delay += 0.08;
     }
-
 
     path.appendChild(animation);
   });

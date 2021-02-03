@@ -3,9 +3,14 @@ import {
   startTicker,
   resetTicker
 } from "./game-ticker";
+import {
+  startNumbersTicker,
+  resetNumbersTicker
+} from "./prize";
 
 const ID_STORY = 1;
 const ID_INTRO = 0;
+let firstCall = true
 
 export default class FullPageScroll {
   constructor() {
@@ -75,9 +80,19 @@ export default class FullPageScroll {
     }
 
     if (this.screenElements[this.activeScreen].classList.contains(`screen--prizes`)) {
+
+      if (firstCall) {
+        firstCall = false
+        startNumbersTicker()
+      } else {
+        resetNumbersTicker();
+      }
+
       this.svgFirstAward.src = `img/primary-award-from.svg`;
       this.svgSecondAward.src = `img/secondary-award-from.svg`;
       this.svgThirdAward.src = `img/additional-award-from.svg`;
+    } else {
+      resetNumbersTicker();
     }
 
     if (this.screenElements[this.activeScreen].classList.contains(`screen--game`)) {

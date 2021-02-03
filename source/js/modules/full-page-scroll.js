@@ -10,7 +10,7 @@ import {
 
 const ID_STORY = 1;
 const ID_INTRO = 0;
-let firstCall = true
+let firstCall = true;
 
 export default class FullPageScroll {
   constructor() {
@@ -82,8 +82,8 @@ export default class FullPageScroll {
     if (this.screenElements[this.activeScreen].classList.contains(`screen--prizes`)) {
 
       if (firstCall) {
-        firstCall = false
-        startNumbersTicker()
+        firstCall = false;
+        startNumbersTicker();
       } else {
         resetNumbersTicker();
       }

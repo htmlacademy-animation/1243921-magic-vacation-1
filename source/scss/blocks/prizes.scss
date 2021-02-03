@@ -127,11 +127,16 @@
   }
 
   &--journeys {
+    .prizes__desc {
+      position: relative;
+      left: -12.9rem;
+    }
     .prizes__icon {
       position: relative;
       left: -5.9rem;
       bottom: 0rem;
       width: 26.8rem;
+
 
       @media (min-width: $stop-scaling) {
         left: -59px;
@@ -166,6 +171,11 @@
     @media (max-width: $tablet) and (orientation: portrait) {
       margin-left: 0;
       padding-left: 1.5rem;
+    }
+
+    .prizes__desc {
+      position: relative;
+      left: -8.9rem;
     }
 
     .prizes__icon {
@@ -207,7 +217,10 @@
     @media (max-width: $tablet) and (orientation: portrait) {
       padding-left: 0.8rem;
     }
-
+    .prizes__desc {
+      position: relative;
+      left: .9rem;
+    }
     .prizes__icon {
       width: 26rem;
 
@@ -248,6 +261,12 @@
   margin: 5.6rem 0 0 0;
   font-size: 1.8rem;
   line-height: 1.1;
+  height: 7rem;
+
+  & b {
+    width: 18rem;
+    text-align: right;
+  }
 
   @media (min-width: $stop-scaling) {
     margin-top: 56px;
@@ -281,19 +300,27 @@
 
     @media (min-width: $stop-scaling) {
       font-size: 120px;
+      width: auto;
+      text-align: center;
     }
 
     @media (max-width: $tablet) and (orientation: portrait) {
       font-size: 4.8rem;
       line-height: 0.6;
+      width: auto;
+      text-align: center;
     }
 
     @media (max-width: $tablet) and (orientation: landscape) {
       font-size: 6rem;
+      width: auto;
+      text-align: center;
     }
 
     @media (max-width: $mobile) and (orientation: landscape) {
       font-size: 3.5rem;
+      width: auto;
+      text-align: center;
     }
   }
 

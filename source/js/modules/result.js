@@ -1,6 +1,9 @@
+import Scene2DSeaCalf from './sea-calf-animation/sea-calf-scene.js';
+
 export default () => {
   let showResultEls = document.querySelectorAll(`.js-show-result`);
   let results = document.querySelectorAll(`.screen--result`);
+  let resultImages = document.querySelectorAll(`.result__image`);
   if (results.length) {
     for (let i = 0; i < showResultEls.length; i++) {
       showResultEls[i].addEventListener(`click`, function () {
@@ -15,6 +18,21 @@ export default () => {
         targetEl[0].classList.add(`screen--show`);
         targetEl[0].classList.remove(`screen--hidden`);
 
+        switch (i) {
+          case 0:
+            /* eslint-disable */
+            const calf = new Scene2DSeaCalf();
+            /* eslint-enable */
+
+            resultImages[i].classList.add(`screen--hidden`);
+            resultImages[i].classList.remove(`screen--show`);
+            // targetEl[i].classList.add(`screen--show`);
+            // targetEl[i].classList.remove(`screen--hidden`);
+            break;
+
+          default:
+            break;
+        }
 
         const resultPaths = document.querySelectorAll(`.screen--show .result path`);
         resultPaths.forEach((path) => {
@@ -38,6 +56,7 @@ export default () => {
 
   const pathArr = document.querySelectorAll(`.result__title path`);
   let delay = 0;
+
   pathArr.forEach((path) => {
     const pathLength = path.getTotalLength();
     const animation = document.createElementNS(`http://www.w3.org/2000/svg`, `animate`);

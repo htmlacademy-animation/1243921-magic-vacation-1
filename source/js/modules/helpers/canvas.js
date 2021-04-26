@@ -11,7 +11,7 @@ export default class Scene2D {
     this.isWaitingForImages = false;
     this.isStarted = false;
     this.animations = [];
-    this.afterInit = () => {};
+    // this.afterInit = () => {};
 
     this.initObjects();
 

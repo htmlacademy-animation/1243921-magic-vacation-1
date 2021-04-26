@@ -1,6 +1,6 @@
-import Animation from './animate.js';
-import Scene2D from './canvas.js';
-import _ from './easings.js';
+import Animation from './helpers/animate.js';
+import Scene2D from './helpers/canvas.js';
+import easing from './helpers/easings.js';
 
 
 const IMAGES_URLS = Object.freeze({
@@ -102,9 +102,9 @@ const LOCALS = Object.freeze({
 });
 
 
-export default class Scene2DSeaCalf extends Scene2D {
+export default class SeaCalfScene extends Scene2D {
   constructor() {
-    const canvas = document.getElementById(`result-canvas`);
+    const canvas = document.getElementById(`result-canvas1`);
 
     super({
       canvas,
@@ -179,7 +179,7 @@ export default class Scene2DSeaCalf extends Scene2D {
       },
       duration: 500,
       delay: 400,
-      easing: _.easeInQuad
+      easing: easing.easeInQuad
     }));
   }
 
@@ -199,7 +199,7 @@ export default class Scene2DSeaCalf extends Scene2D {
       },
       duration: 500,
       delay: 400,
-      easing: _.easeInQuad
+      easing: easing.easeInQuad
     }));
   }
 
@@ -212,7 +212,7 @@ export default class Scene2DSeaCalf extends Scene2D {
       },
       duration: 500,
       delay: 400,
-      easing: _.easeInQuad
+      easing: easing.easeInQuad
     }));
 
     this.animations.push(new Animation({
@@ -222,7 +222,7 @@ export default class Scene2DSeaCalf extends Scene2D {
       },
       duration: 500,
       delay: 700,
-      easing: _.easeInQuad
+      easing: easing.easeInQuad
     }));
   }
 
@@ -240,7 +240,7 @@ export default class Scene2DSeaCalf extends Scene2D {
       },
       duration: 2000,
       delay: 200,
-      easing: _.easeOutElastic
+      easing: easing.easeOutElastic
     }));
 
     this.animations.push(new Animation({
@@ -250,7 +250,7 @@ export default class Scene2DSeaCalf extends Scene2D {
       },
       duration: 100,
       delay: 200,
-      easing: _.easeInQuad
+      easing: easing.easeInQuad
     }));
   }
 
@@ -279,7 +279,7 @@ export default class Scene2DSeaCalf extends Scene2D {
       },
       duration: 500,
       delay: 700,
-      easing: _.easeInQuad
+      easing: easing.easeInQuad
     }));
 
     this.animations.push(new Animation({
@@ -288,7 +288,7 @@ export default class Scene2DSeaCalf extends Scene2D {
       },
       duration: 500,
       delay: 1100,
-      easing: _.easeInQuad
+      easing: easing.easeInQuad
     }));
   }
 

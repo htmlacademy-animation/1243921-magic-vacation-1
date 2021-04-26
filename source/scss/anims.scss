@@ -94,11 +94,12 @@
 
 @keyframes fail-falling {
   from {
-    transform: translate3d(0, -4em, 0);
+    transform: translateY(-4em);
     opacity: 0;
   }
+
   to {
-    transform: translate3d(0, -1.5, 0);
+    transform: translateY(0em);
     opacity: 1;
   }
 }

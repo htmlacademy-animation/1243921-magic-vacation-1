@@ -48,9 +48,6 @@
   <g id="case" opacity="0">
     <animateTransform id="scale" attributeName="transform" type="scale" values="0; 0; 0.5; 1" keyTimes="0; 0.1; 0.7; 1"
       dur="2s" additive="sum" begin="3.3s" fill="freeze" />
-    <animateMotion dur="2s" fill="freeze" begin="scale.begin">
-      <mpath href="#flyPath" />
-    </animateMotion>
 
     <set attributeName="opacity" to="1" begin="scale.begin + 0.25s" />
 
@@ -58,10 +55,13 @@
       values="30 210 275; -30 210 275; 20 210 275; 18.29 210 275; -6.48 210 275; 0 210 275" dur="2s" begin="scale.begin"
       fill="freeze" additive="sum" />
 
-    <animateTransform attributeName="transform" type="translate"
+    <!-- <animateTransform attributeName="transform" type="translate"
       values="100 -400; -300 -370; -400 -330; -100 -300; -210 -275" dur="2s" additive="sum" begin="scale.begin"
-      fill="freeze" />
+      fill="freeze" /> -->
 
+    <animateMotion dur="2s" fill="freeze" begin="scale.begin">
+      <mpath href="#flyPath" />
+    </animateMotion>
 
 
     <path d="M251.89,328.88a3.54,3.54,0,0,0,3.53-3.53v-5.07a3.53,3.53,0,1,0-7.06,0v5.07a3.55,3.55,0,0,0,3.53,3.53"

@@ -1,4 +1,4 @@
-import _ from './easings.js';
+import easing from './easings.js';
 
 
 export default class Animation {
@@ -6,7 +6,7 @@ export default class Animation {
     this.options = options;
 
     if (!this.options.easing) {
-      this.options.easing = _.easeLinear;
+      this.options.easing = easing.easeLinear;
     }
 
     if (!this.options.duration) {
@@ -21,12 +21,22 @@ export default class Animation {
       this.options.fps = 60;
     }
 
+    if (this.options.count) {
+      this.options.count = Math.floor(Math.abs(this.options.count));
+    } else {
+      this.options.count = 1;
+    }
+
+    if (!this.options.repeatDelay) {
+      this.options.repeatDelay = this.options.delay;
+    }
+
     this.timeoutId = null;
     this.requestId = null;
   }
 
 
-  start(options) {
+  start(options, loop) {
     this.stop();
 
     this.timeoutId = setTimeout(() => {
@@ -82,10 +92,20 @@ export default class Animation {
             }
 
             if (this.isFinished) {
-              this.stop();
+              // this.stop();
 
-              if (typeof this.options.callback === `function`) {
-                this.options.callback();
+              // if (typeof this.options.callback === `function`) {
+              //   this.options.callback();
+              // }
+              this.options.count -= 1;
+              if (this.options.count > 0) {
+                this.start(options, true);
+              } else {
+                this.stop();
+
+                if (typeof this.options.callback === `function`) {
+                  this.options.callback();
+                }
               }
             }
           }
@@ -93,7 +113,7 @@ export default class Animation {
       }
 
       this.requestId = requestAnimationFrame(animateFrame);
-    }, this.options.delay);
+    }, (loop ? this.options.repeatDelay : this.options.delay));
   }
 
 

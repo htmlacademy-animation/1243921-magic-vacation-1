@@ -1,6 +1,6 @@
-import Animation from './helpers/animate.js';
-import Scene2D from './helpers/canvas.js';
-import easing from './helpers/easings.js';
+import Animation from './helpers/2d/animate.js';
+import Scene2D from './helpers/2d/canvas.js';
+import easing from './helpers/2d/easings.js';
 
 
 const IMAGES_URLS = Object.freeze({

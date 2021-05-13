@@ -1,6 +1,6 @@
-import Animation from './helpers/animate';
-import Scene2D from './helpers/canvas';
-import easing from './helpers/easings';
+import Animation from './helpers/2d/animate';
+import Scene2D from './helpers/2d/canvas';
+import easing from './helpers/2d/easings';
 
 const IMAGES_URLS = {
   crocodile: `./img/result3/crocodile.png`,
